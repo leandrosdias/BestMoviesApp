@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Plugin.Multilingual;
+using System;
+using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,7 +11,7 @@ namespace BestMoviesApp
         public App()
         {
             InitializeComponent();
-
+            AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
             MainPage = new MainPage();
         }
 
