@@ -1,10 +1,7 @@
-﻿using Plugin.Multilingual;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
-using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,7 +22,8 @@ namespace BestMoviesApp.Helpers
             if (Text == null)
                 return "";
 
-            var ci = CrossMultilingual.Current.CurrentCultureInfo;
+            var config = ConfigHelper.GetConfig();
+            var ci = new CultureInfo(config.Language);
 
             var translation = resmgr.Value.GetString(Text, ci);
             if (translation == null)
