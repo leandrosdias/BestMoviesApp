@@ -35,5 +35,10 @@ namespace BestMoviesApp.Services
                     throw new NotImplementedException();
             }
         }
+
+        public async Task NavigateToMenu()
+        {
+            await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new MenuPage());
+        }
     }
 }
