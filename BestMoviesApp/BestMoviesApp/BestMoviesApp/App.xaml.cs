@@ -1,4 +1,5 @@
 ﻿using BestMoviesApp.Helpers;
+using BestMoviesApp.Views;
 using System.Globalization;
 using Xamarin.Forms;
 
@@ -13,7 +14,7 @@ namespace BestMoviesApp
             var config = ConfigHelper.GetConfig();
             AppResources.Culture = new CultureInfo(config.Language);
 
-            MainPage = new MainPage();
+            MainPage = new MenuPage();
         }
 
         
