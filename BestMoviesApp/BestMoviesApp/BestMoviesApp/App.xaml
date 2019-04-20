@@ -14,6 +14,7 @@
             <Setter Property="TextColor" Value="Black" />
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontAttributes" Value="Bold" />
         </Style>
     </Application.Resources>
 </Application>
