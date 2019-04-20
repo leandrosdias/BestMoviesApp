@@ -120,6 +120,12 @@
   <data name="HelloWorld" xml:space="preserve">
     <value>Olá Mundo</value>
   </data>
+  <data name="ScreenNotAllowDisconnected" xml:space="preserve">
+    <value>Não é possível acessar {0} sem conexão com internet</value>
+  </data>
+  <data name="SystemError" xml:space="preserve">
+    <value>Erro Inesperado</value>
+  </data>
   <data name="TitleFavorites" xml:space="preserve">
     <value>Favoritos</value>
   </data>

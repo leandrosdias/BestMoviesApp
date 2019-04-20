@@ -70,6 +70,24 @@ namespace BestMoviesApp {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Can not access {0} without internet connection.
+        /// </summary>
+        internal static string ScreenNotAllowDisconnected {
+            get {
+                return ResourceManager.GetString("ScreenNotAllowDisconnected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Unexpected Error.
+        /// </summary>
+        internal static string SystemError {
+            get {
+                return ResourceManager.GetString("SystemError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Favorites.
         /// </summary>
         internal static string TitleFavorites {
