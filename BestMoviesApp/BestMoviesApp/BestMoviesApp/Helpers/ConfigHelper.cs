@@ -17,6 +17,13 @@ namespace BestMoviesApp.Helpers
             configAcessor.Insert();
         }
 
+        public static void InsertOrUpdateConfig(Config config)
+        {
+            var modelAcessor = new SqlDataAccessor();
+            var configAcessor = new ConfigAccessor(modelAcessor, config);
+            configAcessor.InsertOrUpdate();
+        }
+
         public static Config GetConfig()
         {
             var modelAcessor = new SqlDataAccessor();
