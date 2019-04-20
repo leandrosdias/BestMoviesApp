@@ -3,6 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BestMoviesApp.App">
     <Application.Resources>
+        <Style x:Key="btIconDft" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="FontSize" Value="60" />
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
 
+        <Style x:Key="btTextMenu" TargetType="Button">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
     </Application.Resources>
 </Application>
