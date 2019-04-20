@@ -1,4 +1,6 @@
 ﻿using BestMoviesApp.Helpers;
+using BestMoviesApp.Interfaces;
+using BestMoviesApp.Services;
 using BestMoviesApp.Views;
 using System.Globalization;
 using Xamarin.Forms;
@@ -13,6 +15,9 @@ namespace BestMoviesApp
 
             var config = ConfigHelper.GetConfig();
             AppResources.Culture = new CultureInfo(config.Language);
+
+            DependencyService.Register<IMessageService, MessageService>();
+            DependencyService.Register<INavigationService, NavigationService>();
 
             MainPage = new MenuPage();
         }
