@@ -19,7 +19,7 @@ namespace BestMoviesApp
             DependencyService.Register<IMessageService, MessageService>();
             DependencyService.Register<INavigationService, NavigationService>();
 
-            MainPage = new MenuPage();
+            MainPage = new NavigationPage(new MenuPage());
         }
 
         
