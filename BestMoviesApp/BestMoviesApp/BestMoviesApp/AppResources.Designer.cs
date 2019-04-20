@@ -61,11 +61,56 @@ namespace BestMoviesApp {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a English (USA).
+        /// </summary>
+        internal static string Desc_en_US {
+            get {
+                return ResourceManager.GetString("Desc_en-US", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Portuguese (Brazil).
+        /// </summary>
+        internal static string Desc_pt_BR {
+            get {
+                return ResourceManager.GetString("Desc_pt-BR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Hello World.
         /// </summary>
         internal static string HelloWorld {
             get {
                 return ResourceManager.GetString("HelloWorld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Language: .
+        /// </summary>
+        internal static string lbLanguage {
+            get {
+                return ResourceManager.GetString("lbLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Save.
+        /// </summary>
+        internal static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Settings saved successfully.
+        /// </summary>
+        internal static string SaveConfigSucess {
+            get {
+                return ResourceManager.GetString("SaveConfigSucess", resourceCulture);
             }
         }
         

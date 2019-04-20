@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Desc_en-US" xml:space="preserve">
+    <value>Inglês (USA)</value>
+  </data>
+  <data name="Desc_pt-BR" xml:space="preserve">
+    <value>Português (Brasil)</value>
+  </data>
   <data name="HelloWorld" xml:space="preserve">
     <value>Olá Mundo</value>
+  </data>
+  <data name="lbLanguage" xml:space="preserve">
+    <value>Idioma: </value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salvar</value>
   </data>
   <data name="ScreenNotAllowDisconnected" xml:space="preserve">
     <value>Não é possível acessar {0} sem conexão com internet</value>
@@ -137,5 +149,8 @@
   </data>
   <data name="TitleUpcoming" xml:space="preserve">
     <value>Próximos Lançamentos</value>
+  </data>
+  <data name="SaveConfigSucess" xml:space="preserve">
+    <value>Configurações salvas com sucesso</value>
   </data>
 </root>
