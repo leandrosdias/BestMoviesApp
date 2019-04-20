@@ -120,4 +120,16 @@
   <data name="HelloWorld" xml:space="preserve">
     <value>Hello World</value>
   </data>
+  <data name="TitleFavorites" xml:space="preserve">
+    <value>Favorites</value>
+  </data>
+  <data name="TitleSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="TitleTopRated" xml:space="preserve">
+    <value>Top Rated Movies</value>
+  </data>
+  <data name="TitleUpcoming" xml:space="preserve">
+    <value>Upcoming Movies</value>
+  </data>
 </root>

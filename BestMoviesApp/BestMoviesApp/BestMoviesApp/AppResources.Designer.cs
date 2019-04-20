@@ -68,5 +68,41 @@ namespace BestMoviesApp {
                 return ResourceManager.GetString("HelloWorld", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Favorites.
+        /// </summary>
+        internal static string TitleFavorites {
+            get {
+                return ResourceManager.GetString("TitleFavorites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Settings.
+        /// </summary>
+        internal static string TitleSettings {
+            get {
+                return ResourceManager.GetString("TitleSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Top Rated Movies.
+        /// </summary>
+        internal static string TitleTopRated {
+            get {
+                return ResourceManager.GetString("TitleTopRated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Upcoming Movies.
+        /// </summary>
+        internal static string TitleUpcoming {
+            get {
+                return ResourceManager.GetString("TitleUpcoming", resourceCulture);
+            }
+        }
     }
 }
