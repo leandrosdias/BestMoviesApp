@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:translator="clr-namespace:BestMoviesApp.Helpers"
+             x:Class="BestMoviesApp.Views.MenuPage">
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="#7e7e7e" ColumnSpacing="15">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="BestMoviesBanner.png"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+            <Button Text="&#xf03d;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="0">
+                <Button.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String" 
+                                Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
+                                iOS="Font Awesome 5 Free"/>
+                </Button.FontFamily>
+
+            </Button>
+
+            <Button Text="{translator:Translate TitleUpcoming}" Style="{StaticResource btTextMenu}" Grid.Row="3" 
+                   Grid.Column="0"/>
+
+            <Button Text="&#xf201;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="1">
+                <Button.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String" 
+                                Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
+                                iOS="Font Awesome 5 Free"/>
+                </Button.FontFamily>
+
+            </Button>
+
+            <Button Text="{translator:Translate TitleTopRated}" Style="{StaticResource btTextMenu}" Grid.Row="3" 
+                   Grid.Column="1"/>
+
+            <Button Text="&#xf005;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="0">
+                <Button.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String" 
+                                Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
+                                iOS="Font Awesome 5 Free"/>
+                </Button.FontFamily>
+
+            </Button>
+
+            <Button Text="{translator:Translate TitleFavorites}" Style="{StaticResource btTextMenu}" Grid.Row="5" 
+                   Grid.Column="0"/>
+
+            <Button Text="&#xf4fe;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="1">
+                <Button.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String" 
+                                Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
+                                iOS="Font Awesome 5 Free"/>
+                </Button.FontFamily>
+
+            </Button>
+
+            <Button Text="{translator:Translate TitleSettings}" Style="{StaticResource btTextMenu}" Grid.Row="5" 
+                   Grid.Column="1"/>
+
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
