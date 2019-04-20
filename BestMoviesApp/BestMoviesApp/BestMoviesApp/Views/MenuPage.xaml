@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:translator="clr-namespace:BestMoviesApp.Helpers"
+             xmlns:enums="clr-namespace:BestMoviesApp.Utils"
              x:Class="BestMoviesApp.Views.MenuPage">
     <ContentPage.Content>
 
@@ -24,7 +25,20 @@
 
             <Image Source="BestMoviesBanner.png"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-            <Button Text="&#xf03d;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="0">
+            <Button Text="&#xf03d;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="0"
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.UpcomingMovies}">
+                <Button.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String" 
+                                Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
+                                iOS="Font Awesome 5 Free"/>
+                </Button.FontFamily>
+            </Button>
+
+            <Button Text="{translator:Translate TitleUpcoming}" Style="{StaticResource btTextMenu}" Grid.Row="3" Grid.Column="0"
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.UpcomingMovies}"/>
+
+            <Button Text="&#xf201;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="1"
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.TopRatedMovies}">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String" 
                                 Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
@@ -33,10 +47,11 @@
 
             </Button>
 
-            <Button Text="{translator:Translate TitleUpcoming}" Style="{StaticResource btTextMenu}" Grid.Row="3" 
-                   Grid.Column="0"/>
+            <Button Text="{translator:Translate TitleTopRated}" Style="{StaticResource btTextMenu}" Grid.Row="3" Grid.Column="1"
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.TopRatedMovies}"/>
 
-            <Button Text="&#xf201;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="1">
+            <Button Text="&#xf005;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="0"
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.FavoritesMovies}">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String" 
                                 Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
@@ -45,10 +60,11 @@
 
             </Button>
 
-            <Button Text="{translator:Translate TitleTopRated}" Style="{StaticResource btTextMenu}" Grid.Row="3" 
-                   Grid.Column="1"/>
+            <Button Text="{translator:Translate TitleFavorites}" Style="{StaticResource btTextMenu}" Grid.Row="5" Grid.Column="0"
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.FavoritesMovies}"/>
 
-            <Button Text="&#xf005;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="0">
+            <Button Text="&#xf4fe;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="1"
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.Settings}">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String" 
                                 Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
@@ -57,20 +73,8 @@
 
             </Button>
 
-            <Button Text="{translator:Translate TitleFavorites}" Style="{StaticResource btTextMenu}" Grid.Row="5" 
-                   Grid.Column="0"/>
-
-            <Button Text="&#xf4fe;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="1">
-                <Button.FontFamily>
-                    <OnPlatform x:TypeArguments="x:String" 
-                                Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
-                                iOS="Font Awesome 5 Free"/>
-                </Button.FontFamily>
-
-            </Button>
-
-            <Button Text="{translator:Translate TitleSettings}" Style="{StaticResource btTextMenu}" Grid.Row="5" 
-                   Grid.Column="1"/>
+            <Button Text="{translator:Translate TitleSettings}" Style="{StaticResource btTextMenu}" Grid.Row="5" Grid.Column="1"
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.Settings}"/>
 
         </Grid>
         

@@ -1,10 +1,22 @@
-﻿using System;
+﻿using BestMoviesApp.Interfaces;
+using BestMoviesApp.Utils;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BestMoviesApp.Services
 {
-    class NavigationService
+    internal class NavigationService : INavigationService
     {
+        public Task NavigateToPageChoiced(ItemChoice itemChoice)
+        {
+            switch (itemChoice)
+            {
+
+                default:
+                    throw new NotImplementedException();
+            }
+        }
     }
 }
