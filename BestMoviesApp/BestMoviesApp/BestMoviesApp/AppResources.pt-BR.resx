@@ -153,4 +153,13 @@
   <data name="SaveConfigSucess" xml:space="preserve">
     <value>Configurações salvas com sucesso</value>
   </data>
+  <data name="MovieOverview" xml:space="preserve">
+    <value>Resumo</value>
+  </data>
+  <data name="MovieReleaseDate" xml:space="preserve">
+    <value>Data de Lançamento</value>
+  </data>
+  <data name="MovieTitle" xml:space="preserve">
+    <value>Título</value>
+  </data>
 </root>

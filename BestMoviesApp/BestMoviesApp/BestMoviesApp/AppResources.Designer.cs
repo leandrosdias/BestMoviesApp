@@ -97,6 +97,33 @@ namespace BestMoviesApp {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Overview.
+        /// </summary>
+        internal static string MovieOverview {
+            get {
+                return ResourceManager.GetString("MovieOverview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Release Date.
+        /// </summary>
+        internal static string MovieReleaseDate {
+            get {
+                return ResourceManager.GetString("MovieReleaseDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Title.
+        /// </summary>
+        internal static string MovieTitle {
+            get {
+                return ResourceManager.GetString("MovieTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Save.
         /// </summary>
         internal static string Save {
