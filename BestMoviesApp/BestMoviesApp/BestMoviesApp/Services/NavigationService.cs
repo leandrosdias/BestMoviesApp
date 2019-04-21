@@ -10,12 +10,15 @@ namespace BestMoviesApp.Services
 {
     internal class NavigationService : INavigationService
     {
-        public async Task NavigateToPageChoiced(ItemChoice itemChoice)
+        public async Task NavigateToPageChoiced(ItemChoice itemChoice, List<Movie> movies = null)
         {
             switch (itemChoice)
             {
                 case ItemChoice.UpcomingMovies:
-                    await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new UpcomingMoviesPage());
+                    if (movies == null)
+                        return;
+
+                    await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new UpcomingMoviesPage(movies));
                     break;
 
                 case ItemChoice.TopRatedMovies:
