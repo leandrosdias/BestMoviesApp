@@ -9,6 +9,7 @@ namespace BestMoviesApp.Interfaces
     internal interface INavigationService
     {
         Task NavigateToPageChoiced(ItemChoice itemChoice, List<Movie> movies = null);
-        Task NavigateToMenu();
+        Task NavigateToMenuPage();
+        Task NavigateToMoviePage(Movie movie);
     }
 }

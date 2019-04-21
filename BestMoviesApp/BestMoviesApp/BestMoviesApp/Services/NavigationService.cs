@@ -39,9 +39,14 @@ namespace BestMoviesApp.Services
             }
         }
 
-        public async Task NavigateToMenu()
+        public async Task NavigateToMenuPage()
         {
             await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new MenuPage());
+        }
+
+        public async Task NavigateToMoviePage(Movie movie)
+        {
+            await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new MoviePage(movie));
         }
     }
 }
