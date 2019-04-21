@@ -25,5 +25,11 @@ namespace BestMoviesApp.Views
                 viewModel.GetNextPageAsync();
             }
         }
+
+        private void MovieSearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var viewModel = (UpcomingMoviesViewModel)BindingContext;
+            viewModel.UpdateListWithSearch(e.NewTextValue);
+        }
     }
 }
