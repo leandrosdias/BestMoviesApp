@@ -1,4 +1,5 @@
-﻿using BestMoviesApp.Interfaces;
+﻿using BestMoviesApp.Helpers;
+using BestMoviesApp.Interfaces;
 using BestMoviesApp.Utils;
 using Plugin.Connectivity;
 using System;
@@ -33,6 +34,10 @@ namespace BestMoviesApp.ViewModels
                         await ShowErrorConnection(itemChoice);
                         return;
                     }
+
+                    var movies = itemChoice == ItemChoice.UpcomingMovies ? await MovieHelper.GetUpcommingMoviesAsync(1) : null;
+                    await _navigationService.NavigateToPageChoiced(itemChoice, movies);
+                    return;
                 }
 
                 await _navigationService.NavigateToPageChoiced(itemChoice);
