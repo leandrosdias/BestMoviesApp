@@ -54,7 +54,7 @@ namespace BestMoviesApp.ViewModels
                 config.Language = SelectedLanguage.Code;
                 ConfigHelper.InsertOrUpdateConfig(config);
                 await _messageService.ShowAsync(UtilsFunctions.GetStringLangResource("SaveConfigSucess"));
-                await _navigationService.NavigateToMenu();
+                await _navigationService.NavigateToMenuPage();
             }
             catch(Exception e)
             {
