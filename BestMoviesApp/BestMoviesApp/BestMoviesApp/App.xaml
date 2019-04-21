@@ -16,5 +16,13 @@
             <Setter Property="HorizontalOptions" Value="Center" />
             <Setter Property="FontAttributes" Value="Bold" />
         </Style>
+
+        <Style x:Key="lbTitle" TargetType="Label">
+            <Setter Property="VerticalOptions" Value="End" />
+            <Setter Property="VerticalTextAlignment" Value="Start" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
     </Application.Resources>
 </Application>
