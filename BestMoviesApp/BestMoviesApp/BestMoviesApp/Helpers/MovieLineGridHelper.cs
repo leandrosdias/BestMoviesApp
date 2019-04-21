@@ -19,6 +19,7 @@ namespace BestMoviesApp.Helpers
                 {
                     if (string.IsNullOrWhiteSpace(lastLine.Title2))
                     {
+                        lastLine.Id2 = movies[0].Id;
                         lastLine.Title2 = movies[0].Title;
                         lastLine.Image2 = "https://image.tmdb.org/t/p/w500/" + movies[0].PosterPath;
                         i++;
@@ -26,6 +27,7 @@ namespace BestMoviesApp.Helpers
 
                     if (string.IsNullOrWhiteSpace(lastLine.Title3))
                     {
+                        lastLine.Id3 = movies[0].Id;
                         lastLine.Title3 = movies[0].Title;
                         lastLine.Image3 = "https://image.tmdb.org/t/p/w500/" + movies[0].PosterPath;
                         i++;
@@ -37,18 +39,21 @@ namespace BestMoviesApp.Helpers
             {
                 var line = new MovieLineGrid
                 {
+                    Id1 = movies[i].Id,
                     Image1 = "https://image.tmdb.org/t/p/w500/" + movies[i].PosterPath,
                     Title1 = movies[i].Title
                 };
 
                 if (movies.Count - i > 1)
                 {
+                    line.Id2 = movies[i + 1].Id;
                     line.Image2 = "https://image.tmdb.org/t/p/w500/" + movies[i + 1].PosterPath;
                     line.Title2 = movies[i + 1].Title;
                 }
 
                 if (movies.Count - i > 2)
                 {
+                    line.Id3 = movies[i + 2].Id;
                     line.Image3 = "https://image.tmdb.org/t/p/w500/" + movies[i + 2].PosterPath;
                     line.Title3 = movies[i + 2].Title;
                 }
