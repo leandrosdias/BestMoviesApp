@@ -79,6 +79,15 @@ namespace BestMoviesApp {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Movie not find.
+        /// </summary>
+        internal static string ErrorMovieNotFind {
+            get {
+                return ResourceManager.GetString("ErrorMovieNotFind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Hello World.
         /// </summary>
         internal static string HelloWorld {

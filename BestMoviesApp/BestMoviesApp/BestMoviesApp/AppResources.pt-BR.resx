@@ -162,4 +162,7 @@
   <data name="MovieTitle" xml:space="preserve">
     <value>Título</value>
   </data>
+  <data name="ErrorMovieNotFind" xml:space="preserve">
+    <value>Filme não encontrado</value>
+  </data>
 </root>

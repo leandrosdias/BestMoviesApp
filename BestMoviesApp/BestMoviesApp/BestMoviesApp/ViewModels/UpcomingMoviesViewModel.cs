@@ -1,6 +1,8 @@
 ﻿using BestMoviesApp.Helpers;
 using BestMoviesApp.Interfaces;
 using BestMoviesApp.Models;
+using BestMoviesApp.Utils;
+using Plugin.Connectivity;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -55,6 +57,9 @@ namespace BestMoviesApp.ViewModels
 
         public async Task GetNextPageAsync()
         {
+            if (!CrossConnectivity.Current.IsConnected)
+                return;
+
             Page++;
             var movies = await MovieHelper.GetUpcommingMoviesAsync(_page);
             _movies.AddRange(movies);
@@ -68,13 +73,13 @@ namespace BestMoviesApp.ViewModels
                 var movie = _movies.FirstOrDefault(x => x.Id == movieId);
                 if (movie == null)
                 {
-                    await _messageService.ShowAsync("");
+                    await _messageService.ShowAsync(UtilsFunctions.GetStringLangResource("ErrorMovieNotFind"));
                     return;
                 }
 
                 await _navigationService.NavigateToMoviePage(movie);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.Write(e.Message);
             }
