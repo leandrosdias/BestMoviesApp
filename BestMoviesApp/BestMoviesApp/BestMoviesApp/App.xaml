@@ -6,6 +6,7 @@
     
     <Application.Resources>
         <converters:StringToColorConverter x:Key="ConvertColor"/>
+        <converters:BooleanConverter x:Key="Inverter"/>
         
         <Style x:Key="btIconDft" TargetType="Button">
             <Setter Property="BackgroundColor" Value="Transparent" />
