@@ -8,11 +8,11 @@
         <ScrollView>
             <AbsoluteLayout BackgroundColor="#7e7e7e">
 
-                <Image Source="{Binding Banner}"
-                       AbsoluteLayout.LayoutBounds="0,0,420,240" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                <Image Source="{Binding Banner}" 
+                       AbsoluteLayout.LayoutBounds="0,0,420,240" AbsoluteLayout.LayoutFlags="PositionProportional" />
 
                 <Image Source="{Binding Poster}"
-                    AbsoluteLayout.LayoutBounds=".05,.3,200,250" AbsoluteLayout.LayoutFlags="PositionProportional" />
+                    AbsoluteLayout.LayoutBounds="0,.3,180,250" AbsoluteLayout.LayoutFlags="PositionProportional" />
 
                 <Button Text="&#xf005;" FontSize="40"  BackgroundColor="Transparent" Command="{Binding FavoriteCommand}"
                         AbsoluteLayout.LayoutBounds="2,2,100,100" AbsoluteLayout.LayoutFlags="None"
@@ -41,13 +41,13 @@
                 </AbsoluteLayout>
 
                 
-                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,.85,1,0.3" AbsoluteLayout.LayoutFlags="All">
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,1,1,0.4" AbsoluteLayout.LayoutFlags="All">
 
                     <BoxView Style="{StaticResource bvTitle}" AbsoluteLayout.LayoutBounds="0,0,1,0.17"/>
                     <Label Text="{translator:Translate MovieOverview}" Style="{StaticResource lbTitleBox}" AbsoluteLayout.LayoutBounds="0,0,1,0.17" />
 
                     <BoxView Style="{StaticResource bvDesc}" AbsoluteLayout.LayoutBounds="0,1,1,0.83" />
-                    <Label Text="{Binding MovieOverview}" FontSize="14" Style="{StaticResource lbTitleBox}" AbsoluteLayout.LayoutBounds="0,1,1,0.83"/>
+                    <Label Text="{Binding MovieOverview}" VerticalTextAlignment="Start" FontSize="14" Style="{StaticResource lbTitleBox}" AbsoluteLayout.LayoutBounds="0,1,1,0.83"/>
                 </AbsoluteLayout>
 
 

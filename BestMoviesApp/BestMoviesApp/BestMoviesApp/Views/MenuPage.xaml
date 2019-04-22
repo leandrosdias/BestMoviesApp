@@ -6,82 +6,85 @@
              x:Class="BestMoviesApp.Views.MenuPage">
     <ContentPage.Content>
 
-        <Grid BackgroundColor="#7e7e7e" ColumnSpacing="15">
+        <ScrollView>
             
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="20" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="5" />
-            </Grid.RowDefinitions>
+            <Grid BackgroundColor="#7e7e7e" ColumnSpacing="15">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="5" />
+                </Grid.RowDefinitions>
 
-            <Image Source="BestMoviesBanner.png"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-            <ActivityIndicator Color="Red" WidthRequest="50" IsRunning="{Binding Loading}" 
+                <Image Source="BestMoviesBanner"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+                <ActivityIndicator Color="Red" IsRunning="{Binding Loading}" 
                                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-            <Button Text="&#xf03d;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="0" 
+                <Button Text="&#xf03d;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="0" 
                     Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.UpcomingMovies}"
                     IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}">
-                <Button.FontFamily>
-                    <OnPlatform x:TypeArguments="x:String" 
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" 
                                 Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
                                 iOS="Font Awesome 5 Free"/>
-                </Button.FontFamily>
-            </Button>
-            <Button Text="{translator:Translate TitleUpcoming}" Style="{StaticResource btTextMenu}" Grid.Row="3" Grid.Column="0"
+                    </Button.FontFamily>
+                </Button>
+                <Button Text="{translator:Translate TitleUpcoming}" Style="{StaticResource btTextMenu}" Grid.Row="3" Grid.Column="0"
                     Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.UpcomingMovies}"
                     IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}"/>
 
-            <Button Text="&#xf201;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="1"
+                <Button Text="&#xf201;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="1"
                     Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.TopRatedMovies}"
                     IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}">
-                <Button.FontFamily>
-                    <OnPlatform x:TypeArguments="x:String" 
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" 
                                 Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
                                 iOS="Font Awesome 5 Free"/>
-                </Button.FontFamily>
-            </Button>
-            <Button Text="{translator:Translate TitleTopRated}" Style="{StaticResource btTextMenu}" Grid.Row="3" Grid.Column="1"
+                    </Button.FontFamily>
+                </Button>
+                <Button Text="{translator:Translate TitleTopRated}" Style="{StaticResource btTextMenu}" Grid.Row="3" Grid.Column="1"
                     Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.TopRatedMovies}"
                     IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}"/>
 
 
-            <Button Text="&#xf005;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="0"
+                <Button Text="&#xf005;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="0"
                     Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.FavoritesMovies}"
                     IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}">
-                <Button.FontFamily>
-                    <OnPlatform x:TypeArguments="x:String" 
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" 
                                 Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
                                 iOS="Font Awesome 5 Free"/>
-                </Button.FontFamily>
-            </Button>
-            <Button Text="{translator:Translate TitleFavorites}" Style="{StaticResource btTextMenu}" Grid.Row="5" Grid.Column="0"
+                    </Button.FontFamily>
+                </Button>
+                <Button Text="{translator:Translate TitleFavorites}" Style="{StaticResource btTextMenu}" Grid.Row="5" Grid.Column="0"
                     Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.FavoritesMovies}"
                     IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}"/>
 
-            <Button Text="&#xf4fe;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="1"
+                <Button Text="&#xf4fe;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="1"
                     Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.Settings}"
                     IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}">
-                <Button.FontFamily>
-                    <OnPlatform x:TypeArguments="x:String" 
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" 
                                 Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
                                 iOS="Font Awesome 5 Free"/>
-                </Button.FontFamily>
-            </Button>
-            <Button Text="{translator:Translate TitleSettings}" Style="{StaticResource btTextMenu}" Grid.Row="5" Grid.Column="1"
+                    </Button.FontFamily>
+                </Button>
+                <Button Text="{translator:Translate TitleSettings}" Style="{StaticResource btTextMenu}" Grid.Row="5" Grid.Column="1"
                     Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.Settings}"
                     IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}"/>
 
-        </Grid>
+            </Grid>
+        </ScrollView>
         
     </ContentPage.Content>
 </ContentPage>

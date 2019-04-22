@@ -24,21 +24,21 @@
                                 </Grid.ColumnDefinitions>
 
                                 <StackLayout Grid.Row="0" Grid.Column="0">
-                                    <ImageButton Source="{Binding Image1}" VerticalOptions="Center" 
+                                    <ImageButton Source="{Binding Image1}" VerticalOptions="Center" BackgroundColor="Transparent"
                                                  Command="{Binding Source={x:Reference MyFavoritesPage}, Path=BindingContext.SelectMovieCommand}" CommandParameter="{Binding Id1}"/>
 
                                     <Label Text="{Binding Title1}" Style="{StaticResource lbTitle}"/>
                                 </StackLayout>
 
                                 <StackLayout Grid.Row="0" Grid.Column="1">
-                                    <ImageButton Source="{Binding Image2}" VerticalOptions="Center"
+                                    <ImageButton Source="{Binding Image2}" VerticalOptions="Center" BackgroundColor="Transparent"
                                                  Command="{Binding Source={x:Reference MyFavoritesPage}, 
                                                  Path=BindingContext.SelectMovieCommand}" CommandParameter="{Binding Id2}"/>
                                     <Label Text="{Binding Title2}" Style="{StaticResource lbTitle}"/>
                                 </StackLayout>
 
                                 <StackLayout Grid.Row="0" Grid.Column="2">
-                                    <ImageButton Source="{Binding Image3}" VerticalOptions="Center"
+                                    <ImageButton Source="{Binding Image3}" VerticalOptions="Center" BackgroundColor="Transparent"
                                                  Command="{Binding Source={x:Reference MyFavoritesPage}, 
                                                  Path=BindingContext.SelectMovieCommand}" CommandParameter="{Binding Id3}"/>
                                     <Label Text="{Binding Title3}" Style="{StaticResource lbTitle}"/>

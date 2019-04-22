@@ -15,7 +15,7 @@
         </Style>
 
         <Style x:Key="btTextMenu" TargetType="Button">
-            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontSize" Value="11" />
             <Setter Property="TextColor" Value="Black" />
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="HorizontalOptions" Value="Center" />
@@ -31,19 +31,19 @@
 
         <Style x:Key="bvTitle" TargetType="BoxView">
             <Setter Property="BackgroundColor" Value="#2e2e1f" />
-            <Setter Property="Opacity" Value="0.4" />
+            <Setter Property="Opacity" Value="0.7" />
             <Setter Property="AbsoluteLayout.LayoutFlags" Value="All" />
         </Style>
 
         <Style x:Key="bvDesc" TargetType="BoxView">
             <Setter Property="BackgroundColor" Value="#5b5b3e" />
-            <Setter Property="Opacity" Value="0.4" />
+            <Setter Property="Opacity" Value="0.7" />
             <Setter Property="AbsoluteLayout.LayoutFlags" Value="All" />
         </Style>
 
         <Style x:Key="lbTitleBox" TargetType="Label">
             <Setter Property="TextColor" Value="White" />
-            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontSize" Value="16" />
             <Setter Property="VerticalTextAlignment" Value="Center" />
             <Setter Property="HorizontalTextAlignment" Value="Center" />
             <Setter Property="AbsoluteLayout.LayoutFlags" Value="All" />
@@ -51,7 +51,7 @@
 
         <Style x:Key="lbDescBox" TargetType="Label">
             <Setter Property="TextColor" Value="White" />
-            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontSize" Value="14" />
             <Setter Property="VerticalTextAlignment" Value="Center" />
             <Setter Property="HorizontalTextAlignment" Value="Center" />
             <Setter Property="AbsoluteLayout.LayoutFlags" Value="All" />
