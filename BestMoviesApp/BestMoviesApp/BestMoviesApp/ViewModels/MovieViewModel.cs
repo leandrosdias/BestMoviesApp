@@ -1,4 +1,6 @@
-﻿using BestMoviesApp.Helpers;
+﻿using BestMoviesApp.Database;
+using BestMoviesApp.Database.ModelAccessor;
+using BestMoviesApp.Helpers;
 using BestMoviesApp.Interfaces;
 using System;
 using System.Globalization;
@@ -44,6 +46,15 @@ namespace BestMoviesApp.ViewModels
             set { _poster = value; Notify("Poster"); }
         }
 
+        private string _favoriteColor;
+        public string FavoriteColor
+        {
+            get => _favoriteColor;
+            set { _favoriteColor = value; Notify("FavoriteColor"); }
+        }
+
+        private Movie _movie;
+        
         public ICommand FavoriteCommand { get; set; }
         private readonly IMessageService _messageService;
         private readonly INavigationService _navigationService;
@@ -52,16 +63,13 @@ namespace BestMoviesApp.ViewModels
         public MovieViewModel(Movie movie)
         {
             MovieTitle = movie.Title;
-
-            var releaseDate = DateTime.ParseExact(movie.ReleaseDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-
-            var config = ConfigHelper.GetConfig();
-            var ci = new CultureInfo(config.Language);
-            MovieReleaseDate = releaseDate.ToString("dd / MMMM / yyyy", ci);
-
             MovieOverview = movie.Overview;
+            SetReleaseDate(movie);
             Banner = "https://image.tmdb.org/t/p/w500/" + movie.BackdropPath;
             Poster = "https://image.tmdb.org/t/p/w500/" + movie.PosterPath;
+
+            _movie = movie;
+            SetFavoriteColor();
 
             FavoriteCommand = new Command(FavoriteMovie);
             _messageService = DependencyService.Get<IMessageService>();
@@ -69,9 +77,44 @@ namespace BestMoviesApp.ViewModels
 
         }
 
+        private void SetReleaseDate(Movie movie)
+        {
+            var releaseDate = DateTime.ParseExact(movie.ReleaseDate, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            var config = ConfigHelper.GetConfig();
+            var ci = new CultureInfo(config.Language);
+            MovieReleaseDate = releaseDate.ToString("dd / MMMM / yyyy", ci);
+        }
+
         public void FavoriteMovie()
         {
+            try
+            {
+                var modelAcessor = new SqlDataAccessor();
 
+                if (!_movie.IsFavorite)
+                {
+                    _movie.IsFavorite = true;
+                    var accessor = new MovieAccessor(modelAcessor, _movie);
+                    accessor.InsertOrUpdate();
+                }
+                else
+                {
+                    _movie.IsFavorite = false;
+                    var accessor = new MovieAccessor(modelAcessor, _movie);
+                    accessor.InsertOrUpdate();
+                }
+
+                SetFavoriteColor();
+            }
+            catch(Exception e)
+            {
+                
+            }
+        }
+
+        private void SetFavoriteColor()
+        {
+            FavoriteColor = _movie.IsFavorite ? "#ffff00" : "#ffffff";
         }
     }
 }
