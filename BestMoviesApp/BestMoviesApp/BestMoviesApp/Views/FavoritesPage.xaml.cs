@@ -13,10 +13,16 @@ namespace BestMoviesApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FavoritesPage : ContentPage
     {
-        public FavoritesPage()
+        public FavoritesPage(List<Movie> movies)
         {
             InitializeComponent();
-            BindingContext = new FavoritesViewModel();
+            BindingContext = new FavoritesViewModel(movies);
+        }
+
+        private void MovieSearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var viewModel = (FavoritesViewModel)BindingContext;
+            viewModel.UpdateListWithSearch(e.NewTextValue);
         }
     }
 }

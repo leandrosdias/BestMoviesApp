@@ -99,9 +99,9 @@ namespace BestMoviesApp.ViewModels
                 }
                 else
                 {
-                    _movie.IsFavorite = false;
                     var accessor = new MovieAccessor(modelAcessor, _movie);
-                    accessor.InsertOrUpdate();
+                    accessor.Delete();
+                    _movie.IsFavorite = false;
                 }
 
                 SetFavoriteColor();

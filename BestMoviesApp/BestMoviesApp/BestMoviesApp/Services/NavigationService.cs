@@ -30,7 +30,7 @@ namespace BestMoviesApp.Services
                     break;
 
                 case ItemChoice.FavoritesMovies:
-                    await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new FavoritesPage());
+                    await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new FavoritesPage(movies));
                     break;
 
 

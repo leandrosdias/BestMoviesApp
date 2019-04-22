@@ -1,4 +1,6 @@
-﻿using BestMoviesApp.Helpers;
+﻿using BestMoviesApp.Database;
+using BestMoviesApp.Database.ModelAccessor;
+using BestMoviesApp.Helpers;
 using BestMoviesApp.Interfaces;
 using BestMoviesApp.Utils;
 using Plugin.Connectivity;
@@ -38,6 +40,20 @@ namespace BestMoviesApp.ViewModels
                     var movies = itemChoice == ItemChoice.UpcomingMovies ? await MovieHelper.GetUpcommingMoviesAsync(1) :
                         await MovieHelper.GetTopRatedMoviesAsync(1);
                     await _navigationService.NavigateToPageChoiced(itemChoice, movies);
+                    return;
+                }
+
+                if(itemChoice == ItemChoice.FavoritesMovies)
+                {
+                    var modelAcessor = new SqlDataAccessor();
+                    var accessor = new MovieAccessor(modelAcessor, null);
+                    var moviesFavorited = accessor.GetMovies();
+                    if(moviesFavorited == null || moviesFavorited.Count <= 0)
+                    {
+                        await _messageService.ShowAsync("Nenhum Filme favoritado!");
+                        return;
+                    }
+                    await _navigationService.NavigateToPageChoiced(itemChoice, moviesFavorited);
                     return;
                 }
 
