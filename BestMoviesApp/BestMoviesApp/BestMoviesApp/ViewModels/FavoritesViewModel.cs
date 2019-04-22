@@ -62,6 +62,7 @@ namespace BestMoviesApp.ViewModels
             catch (Exception e)
             {
                 Debug.Write(e.Message);
+                await _messageService.ShowAsync(UtilsFunctions.GetStringLangResource("SystemError"));
             }
         }
 
