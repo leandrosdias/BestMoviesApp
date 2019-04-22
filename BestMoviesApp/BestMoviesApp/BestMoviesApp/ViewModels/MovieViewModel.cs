@@ -4,6 +4,7 @@ using BestMoviesApp.Helpers;
 using BestMoviesApp.Interfaces;
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -68,9 +69,15 @@ namespace BestMoviesApp.ViewModels
             Banner = "https://image.tmdb.org/t/p/w500/" + movie.BackdropPath;
             Poster = "https://image.tmdb.org/t/p/w500/" + movie.PosterPath;
 
+            var modelAcessor = new SqlDataAccessor();
+            var accessor = new MovieAccessor(modelAcessor, _movie);
+
+            if (accessor.GetMovies().Select(x => x.Id).Contains(movie.Id))
+                movie.IsFavorite = true;
+
             _movie = movie;
             SetFavoriteColor();
-
+            
             FavoriteCommand = new Command(FavoriteMovie);
             _messageService = DependencyService.Get<IMessageService>();
             _navigationService = DependencyService.Get<INavigationService>();
