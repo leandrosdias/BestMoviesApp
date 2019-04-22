@@ -14,6 +14,12 @@ namespace BestMoviesApp.ViewModels
 {
     class MenuViewModel : BaseViewModel
     {
+        private bool _loading;
+        public bool Loading
+        {
+            get => _loading;
+            set { _loading = value; Notify("Loading"); }
+        }
         public ICommand ButtonCommand { get; set; }
         private readonly IMessageService _messageService;
         private readonly INavigationService _navigationService;
@@ -27,6 +33,7 @@ namespace BestMoviesApp.ViewModels
 
         private async void ButtonClick(ItemChoice itemChoice)
         {
+            Loading = true;
             try
             {
                 if(itemChoice == ItemChoice.UpcomingMovies || itemChoice == ItemChoice.TopRatedMovies)
@@ -34,12 +41,14 @@ namespace BestMoviesApp.ViewModels
                     if (!CrossConnectivity.Current.IsConnected)
                     {
                         await ShowErrorConnection(itemChoice);
+                        Loading = false;
                         return;
                     }
 
                     var movies = itemChoice == ItemChoice.UpcomingMovies ? await MovieHelper.GetUpcommingMoviesAsync(1) :
                         await MovieHelper.GetTopRatedMoviesAsync(1);
                     await _navigationService.NavigateToPageChoiced(itemChoice, movies);
+                    Loading = false;
                     return;
                 }
 
@@ -50,19 +59,23 @@ namespace BestMoviesApp.ViewModels
                     var moviesFavorited = accessor.GetMovies();
                     if(moviesFavorited == null || moviesFavorited.Count <= 0)
                     {
-                        await _messageService.ShowAsync("Nenhum Filme favoritado!");
+                        await _messageService.ShowAsync(UtilsFunctions.GetStringLangResource("ErroWithoutFavorites"));
+                        Loading = false;
                         return;
                     }
                     await _navigationService.NavigateToPageChoiced(itemChoice, moviesFavorited);
+                    Loading = false;
                     return;
                 }
 
                 await _navigationService.NavigateToPageChoiced(itemChoice);
+                Loading = false;
             }
             catch (Exception e)
             {
                 Debug.Write(e.Message);
                 await _messageService.ShowAsync(UtilsFunctions.GetStringLangResource("SystemError"));
+                Loading = false;
             }
         }
 

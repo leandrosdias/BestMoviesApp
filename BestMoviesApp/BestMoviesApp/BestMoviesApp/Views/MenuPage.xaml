@@ -25,56 +25,61 @@
 
             <Image Source="BestMoviesBanner.png"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
 
-            <Button Text="&#xf03d;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="0"
-                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.UpcomingMovies}">
+            <ActivityIndicator Color="Red" WidthRequest="50" IsRunning="{Binding Loading}" 
+                               Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+            <Button Text="&#xf03d;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="0" 
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.UpcomingMovies}"
+                    IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String" 
                                 Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
                                 iOS="Font Awesome 5 Free"/>
                 </Button.FontFamily>
             </Button>
-
             <Button Text="{translator:Translate TitleUpcoming}" Style="{StaticResource btTextMenu}" Grid.Row="3" Grid.Column="0"
-                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.UpcomingMovies}"/>
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.UpcomingMovies}"
+                    IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}"/>
 
             <Button Text="&#xf201;" Style="{StaticResource btIconDft}" Grid.Row="2" Grid.Column="1"
-                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.TopRatedMovies}">
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.TopRatedMovies}"
+                    IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String" 
                                 Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
                                 iOS="Font Awesome 5 Free"/>
                 </Button.FontFamily>
-
             </Button>
-
             <Button Text="{translator:Translate TitleTopRated}" Style="{StaticResource btTextMenu}" Grid.Row="3" Grid.Column="1"
-                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.TopRatedMovies}"/>
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.TopRatedMovies}"
+                    IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}"/>
+
 
             <Button Text="&#xf005;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="0"
-                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.FavoritesMovies}">
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.FavoritesMovies}"
+                    IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String" 
                                 Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
                                 iOS="Font Awesome 5 Free"/>
                 </Button.FontFamily>
-
             </Button>
-
             <Button Text="{translator:Translate TitleFavorites}" Style="{StaticResource btTextMenu}" Grid.Row="5" Grid.Column="0"
-                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.FavoritesMovies}"/>
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.FavoritesMovies}"
+                    IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}"/>
 
             <Button Text="&#xf4fe;" Style="{StaticResource btIconDft}" Grid.Row="4" Grid.Column="1"
-                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.Settings}">
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.Settings}"
+                    IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String" 
                                 Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
                                 iOS="Font Awesome 5 Free"/>
                 </Button.FontFamily>
-
             </Button>
-
             <Button Text="{translator:Translate TitleSettings}" Style="{StaticResource btTextMenu}" Grid.Row="5" Grid.Column="1"
-                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.Settings}"/>
+                    Command="{Binding ButtonCommand}" CommandParameter="{x:Static enums:ItemChoice.Settings}"
+                    IsEnabled="{Binding Loading,Converter={StaticResource Inverter}}"/>
 
         </Grid>
         
