@@ -35,7 +35,8 @@ namespace BestMoviesApp.ViewModels
                         return;
                     }
 
-                    var movies = itemChoice == ItemChoice.UpcomingMovies ? await MovieHelper.GetUpcommingMoviesAsync(1) : null;
+                    var movies = itemChoice == ItemChoice.UpcomingMovies ? await MovieHelper.GetUpcommingMoviesAsync(1) :
+                        await MovieHelper.GetTopRatedMoviesAsync(1);
                     await _navigationService.NavigateToPageChoiced(itemChoice, movies);
                     return;
                 }

@@ -4,6 +4,7 @@
              x:Name="MyUpcomingMoviesPage"
              x:Class="BestMoviesApp.Views.UpcomingMoviesPage">
     <ContentPage.Content>
+        
         <StackLayout BackgroundColor="#7e7e7e">
             <Label x:Name="Page" Text="{Binding Page}" IsVisible="False"/>
             <SearchBar x:Name="MovieSearchBar" TextChanged="MovieSearchBar_TextChanged" />
@@ -48,5 +49,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

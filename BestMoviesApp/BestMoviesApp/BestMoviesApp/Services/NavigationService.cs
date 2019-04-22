@@ -22,7 +22,7 @@ namespace BestMoviesApp.Services
                     break;
 
                 case ItemChoice.TopRatedMovies:
-                    await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new TopRatedPage());
+                    await Xamarin.Forms.Application.Current.MainPage.Navigation.PushAsync(new TopRatedPage(movies));
                     break;
 
                 case ItemChoice.Settings:

@@ -13,7 +13,6 @@ namespace BestMoviesApp.Views
         {
             InitializeComponent();
             BindingContext = new UpcomingMoviesViewModel(movies);
-
         }
 
         private void ListView_ItemAppearing(object sender, ItemVisibilityEventArgs e)

@@ -36,5 +36,31 @@ namespace BestMoviesApp.Helpers
                 return null;
             }
         }
+
+        public static async Task<List<Movie>> GetTopRatedMoviesAsync(int page)
+        {
+            try
+            {
+                var config = ConfigHelper.GetConfig();
+
+                var endoint = $"https://api.themoviedb.org/3/movie/top_rated?api_key=1f54bd990f1cdfb230adb312546d765d&language={config.Language}&page={page}";
+                var client = new HttpClient();
+
+                using (var request = new HttpRequestMessage(new HttpMethod("GET"), endoint))
+                {
+                    var response = await client.SendAsync(request);
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<ResultTopRatedMovies>(jsonResponse);
+                    ConfigHelper.InsertOrUpdateConfig(config);
+
+                    return result.Movies.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.Write(e.Message);
+                return null;
+            }
+        }
     }
 }

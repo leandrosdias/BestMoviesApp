@@ -13,10 +13,26 @@ namespace BestMoviesApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TopRatedPage : ContentPage
     {
-        public TopRatedPage()
+        public TopRatedPage(List<Movie> movies)
         {
             InitializeComponent();
-            BindingContext = new TopRatedViewModel();
+            BindingContext = new TopRatedViewModel(movies);
+        }
+
+        private void ListView_ItemAppearing(object sender, ItemVisibilityEventArgs e)
+        {
+            var nItems = int.Parse(Page.Text) * 20 / 6;
+            if (nItems == e.ItemIndex)
+            {
+                var viewModel = (TopRatedViewModel)BindingContext;
+                viewModel.GetNextPageAsync();
+            }
+        }
+
+        private void MovieSearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var viewModel = (TopRatedViewModel)BindingContext;
+            viewModel.UpdateListWithSearch(e.NewTextValue);
         }
     }
 }
