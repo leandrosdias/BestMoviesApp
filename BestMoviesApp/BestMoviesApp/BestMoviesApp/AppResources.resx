@@ -165,4 +165,7 @@
   <data name="ErrorMovieNotFind" xml:space="preserve">
     <value>Movie not find</value>
   </data>
+  <data name="ErroWithoutFavorites" xml:space="preserve">
+    <value>There is no favorite movie</value>
+  </data>
 </root>

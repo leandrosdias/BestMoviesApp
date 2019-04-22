@@ -88,6 +88,15 @@ namespace BestMoviesApp {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a There is no favorite movie.
+        /// </summary>
+        internal static string ErroWithoutFavorites {
+            get {
+                return ResourceManager.GetString("ErroWithoutFavorites", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Hello World.
         /// </summary>
         internal static string HelloWorld {
