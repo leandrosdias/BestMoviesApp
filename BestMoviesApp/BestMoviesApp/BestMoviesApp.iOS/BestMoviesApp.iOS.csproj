@@ -146,4 +146,10 @@
       <Name>BestMoviesApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BestMoviesBanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\BestMoviesBanner2.png" />
+  </ItemGroup>
 </Project>
