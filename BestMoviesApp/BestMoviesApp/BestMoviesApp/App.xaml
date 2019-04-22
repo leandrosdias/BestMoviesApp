@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:BestMoviesApp.Converters"
+             x:Class="BestMoviesApp.App">
+    
+    <Application.Resources>
+        <converters:StringToColorConverter x:Key="ConvertColor"/>
+        <converters:BooleanConverter x:Key="Inverter"/>
+        
+        <Style x:Key="btIconDft" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="FontSize" Value="60" />
+            <Setter Property="TextColor" Value="Black" />
+        </Style>
+
+        <Style x:Key="btTextMenu" TargetType="Button">
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style x:Key="lbTitle" TargetType="Label">
+            <Setter Property="VerticalOptions" Value="End" />
+            <Setter Property="VerticalTextAlignment" Value="Start" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style x:Key="bvTitle" TargetType="BoxView">
+            <Setter Property="BackgroundColor" Value="#2e2e1f" />
+            <Setter Property="Opacity" Value="0.7" />
+            <Setter Property="AbsoluteLayout.LayoutFlags" Value="All" />
+        </Style>
+
+        <Style x:Key="bvDesc" TargetType="BoxView">
+            <Setter Property="BackgroundColor" Value="#5b5b3e" />
+            <Setter Property="Opacity" Value="0.7" />
+            <Setter Property="AbsoluteLayout.LayoutFlags" Value="All" />
+        </Style>
+
+        <Style x:Key="lbTitleBox" TargetType="Label">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="AbsoluteLayout.LayoutFlags" Value="All" />
+        </Style>
+
+        <Style x:Key="lbDescBox" TargetType="Label">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="AbsoluteLayout.LayoutFlags" Value="All" />
+        </Style>
+
+    </Application.Resources>
+</Application>

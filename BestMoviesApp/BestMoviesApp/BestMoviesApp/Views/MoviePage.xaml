@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:translator="clr-namespace:BestMoviesApp.Helpers"
+             
+             x:Class="BestMoviesApp.Views.MoviePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <AbsoluteLayout BackgroundColor="#7e7e7e">
+
+                <Image Source="{Binding Banner}" 
+                       AbsoluteLayout.LayoutBounds="0,0,420,240" AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+                <Image Source="{Binding Poster}"
+                    AbsoluteLayout.LayoutBounds="0,.3,180,250" AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+                <Button Text="&#xf005;" FontSize="40"  BackgroundColor="Transparent" Command="{Binding FavoriteCommand}"
+                        AbsoluteLayout.LayoutBounds="2,2,100,100" AbsoluteLayout.LayoutFlags="None"
+                        TextColor="{Binding FavoriteColor, Converter={StaticResource ConvertColor}}" >
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String" 
+                                Android="fa-solid-900.ttf#Font Awesome 5 Free Solid" 
+                                iOS="Font Awesome 5 Free"/>
+                    </Button.FontFamily>
+                </Button>
+                
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds=".98,.47,0.5,0.18" AbsoluteLayout.LayoutFlags="All">
+                   
+                    <BoxView Style="{StaticResource bvTitle}" AbsoluteLayout.LayoutBounds="0,0,1,0.25" />
+                    <Label Text="{translator:Translate MovieTitle}" Style="{StaticResource lbTitleBox}" AbsoluteLayout.LayoutBounds="0,0,1,0.25" />
+
+                    <BoxView Style="{StaticResource bvDesc}" AbsoluteLayout.LayoutBounds="0,0.32,1,0.25" />
+                    <Label Text="{Binding MovieTitle}" Style="{StaticResource lbDescBox}" AbsoluteLayout.LayoutBounds="0,0.32,1,0.25" />
+
+                    <BoxView Style="{StaticResource bvTitle}" AbsoluteLayout.LayoutBounds="0,0.66,1,0.25"/>
+                    <Label Text="{translator:Translate MovieReleaseDate}" Style="{StaticResource lbTitleBox}" AbsoluteLayout.LayoutBounds="0,0.66,1,0.25" />
+
+                    <BoxView Style="{StaticResource bvDesc}" AbsoluteLayout.LayoutBounds="0,1,1,0.25" />
+                    <Label Text="{Binding MovieReleaseDate}"  Style="{StaticResource lbDescBox}" AbsoluteLayout.LayoutBounds="0,1,1,0.25" />
+
+                </AbsoluteLayout>
+
+                
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,1,1,0.4" AbsoluteLayout.LayoutFlags="All">
+
+                    <BoxView Style="{StaticResource bvTitle}" AbsoluteLayout.LayoutBounds="0,0,1,0.17"/>
+                    <Label Text="{translator:Translate MovieOverview}" Style="{StaticResource lbTitleBox}" AbsoluteLayout.LayoutBounds="0,0,1,0.17" />
+
+                    <BoxView Style="{StaticResource bvDesc}" AbsoluteLayout.LayoutBounds="0,1,1,0.83" />
+                    <Label Text="{Binding MovieOverview}" VerticalTextAlignment="Start" FontSize="14" Style="{StaticResource lbTitleBox}" AbsoluteLayout.LayoutBounds="0,1,1,0.83"/>
+                </AbsoluteLayout>
+
+
+            </AbsoluteLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

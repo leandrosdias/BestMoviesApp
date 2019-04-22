@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:translator="clr-namespace:BestMoviesApp.Helpers"
+             x:Class="BestMoviesApp.Views.SettingsPage">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout BackgroundColor="#7e7e7e">
+
+                <Image Source="BestMoviesBanner2.png" WidthRequest="180"/>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Label Text="{translator:Translate lbLanguage}" FontSize="25" Margin="0,30,5,0" FontAttributes="Bold"/>
+
+                    <Picker FontSize="25" FontAttributes="Bold" Margin="0,15,0,0"
+                        WidthRequest="250"
+                        ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" 
+                        ItemDisplayBinding="{Binding Description}"/>
+
+                </StackLayout>
+
+                <Button Text="{translator:Translate Save}" VerticalOptions="EndAndExpand" Margin="100,20" 
+                    Command="{Binding SaveCommand}"  />
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
